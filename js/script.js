@@ -4,8 +4,7 @@
 ;
 
 $(document).ready(function(){
-
-$("input[name=select_table]").change(function(){
+$("input[name=select_table]").change(function (){
     var value_radio = $(this).val();
     $("[name=query]").autocomplete({
     minLength: 1,
@@ -26,5 +25,6 @@ $("input[name=select_table]").change(function(){
           });
            }
 });  
+$("#select_one").change();
 });
 
