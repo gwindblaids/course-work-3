@@ -18,11 +18,9 @@ $count++;
 if ($count == 0) $return_arr[0] = array('value' => 'Попробуйте ввести другой запрос!');
 echo json_encode($return_arr, JSON_UNESCAPED_UNICODE);     //возвращает результаты поиска скрипту
 } 
-
 elseif
 //work 100%
 ($_GET['search_tip'] == 'title' && $_GET['search_by']=='sr') {   //Тип поиска - таких может быть бесконечно много - передается с autocomplete
-
 $query_new = $database->setRequest("SELECT DISTINCT `number_shifts` FROM `receipt` WHERE `number_shifts` LIKE '" . strval($_GET['term']) . "%' ORDER BY `number_shifts` LIMIT 100");
 while ($podrow = $query_new->fetch(PDO::FETCH_LAZY))    {
 //формируем ассоциативный массив результата поиска
@@ -35,11 +33,8 @@ echo json_encode($return_arr, JSON_UNESCAPED_UNICODE);     //возвращае�
 } 
 elseif //work 100%
 ($_GET['search_tip'] == 'title' && $_GET['search_by']=='cd') {   //Тип поиска - таких может быть бесконечно много - передается с autocomplete
-
 $query_new = $database->setRequest("SELECT month(`datetime_begin`) AS `month` FROM `users` WHERE month(`datetime_begin`) LIKE '%" . strval($_GET['term']) . "%' UNION SELECT month(`datetime_end`) AS `month` FROM `users` WHERE month(`datetime_end`) LIKE '%" . strval($_GET['term']) . "%'");
 while ($podrow = $query_new->fetch(PDO::FETCH_LAZY))    {
-	
-
 //формируем ассоциативный массив результата поиска
 $return_arr[] = array(
 'value' => $podrow['month']);
