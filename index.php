@@ -3,7 +3,7 @@
  * @Author: gwindblaids
  * @Date:   2018-03-29 16:25:07
  * @Last Modified by:   gwindblaids
- * @Last Modified time: 2018-04-03 18:56:50
+ * @Last Modified time: 2018-04-09 21:13:48
  */
 header("Content-Type = text/html;charset=utf-8;");?>
     <!DOCTYPE html>
@@ -26,7 +26,7 @@ header("Content-Type = text/html;charset=utf-8;");?>
             <input type="text" name="query" class="query" placeholder="Начните вводить данные в зависимости от выбранного запроса" id="input_query" autocomplete="off" required>
             <br>
             <div class="radio">
-                <input type="radio" name="select_table" value="fr" id="select_one" checked>
+                <input type="radio" name="select_table" value="fr" id="select_one">
                 <label for="select_one">FR</label>
                 <input type="radio" name="select_table" value="sr" id="select_two">
                 <label for="select_two">SR</label>

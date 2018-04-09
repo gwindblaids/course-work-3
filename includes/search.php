@@ -15,7 +15,7 @@ $return_arr[] = array(
 'value' => $podrow['full_date']);
 $count++;
 }
-if ($count == 0) $return_arr[0] = array('value' => 'Попробуйте ввести другой запрос!');
+if ($count == 0) $return_arr[0] = array('value' => 'По вашему запросу ничего не найдено');
 echo json_encode($return_arr, JSON_UNESCAPED_UNICODE);     //возвращает результаты поиска скрипту
 } 
 elseif
@@ -28,7 +28,7 @@ $return_arr[] = array(
 'value' => $podrow['number_shifts']);
 $count++;
 }
-if ($count == 0) $return_arr[0] = array('value' => 'Попробуйте ввести другой запрос!');
+if ($count == 0) $return_arr[0] = array('value' => 'По вашему запросу ничего не найдено');
 echo json_encode($return_arr, JSON_UNESCAPED_UNICODE);     //возвращает результаты поиска скрипту
 } 
 elseif //work 100%
@@ -40,7 +40,7 @@ $return_arr[] = array(
 'value' => $podrow['month']);
 $count++;
 }
-if ($count == 0) $return_arr[0] = array('value' => 'Попробуйте ввести другой запрос!');
+if ($count == 0) $return_arr[0] = array('value' => 'По вашему запросу ничего не найдено');
 echo json_encode($return_arr, JSON_UNESCAPED_UNICODE); //возвращает результаты поиска скрипту
 }
 ?>

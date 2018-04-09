@@ -4,7 +4,7 @@
  * @Author: gwindblaids
  * @Date:   2018-03-29 16:25:07
  * @Last Modified by:   gwindblaids
- * @Last Modified time: 2018-03-29 23:06:12
+ * @Last Modified time: 2018-04-09 21:15:23
  */
 
 // скрипт автоматически заполняет базу данных случайными данными
@@ -27,16 +27,36 @@ function datetime () {
 }
 // Запишем экземпляр класса Faker\Factory в переменную
 
+function datefor_b() {
+	$min = strtotime("20151227");
+    $max = strtotime("20181130");
+
+    // Generate random number using above bounds
+    $val = rand($min, $max);
+
+    // Convert back to desired date format
+    return $val;
+}
+function datefor_e($value) {
+    $max = strtotime("20181130");
+
+    // Generate random number using above bounds
+    $val = rand($value, $max);
+
+    // Convert back to desired date format
+    return date('Y-m-d H:i:s', $val);
+}
 $faker = Faker::create('ru_RU');
 
 // Подключаемся к БД как в PDO
-RedBean::setup('mysql:host=localhost;dbname=course_work', 'gwindblaids', 'GwindblaidsEdik9344');
+RedBean::setup('mysql:host=localhost;dbname=course_work;charset=utf-8;', 'gwindblaids', 'GwindblaidsEdik9344');
 
-for ($i=0;$i<100;$i++) {
+for ($i=0;$i<1000;$i++) {
 
 $price_min = rand(4,10);
+$datetime_begin = datefor_b();
+$datetime_end = datefor_e($datetime_begin);
 $quantity_min = rand(1,50000);
-
 // массив данных для таблицы price
 $data_price = [
 	'date' =>datetime(),
@@ -50,8 +70,8 @@ $data_receipt = [
 	'name' => $faker->company,
 	'adress' => $faker->region,
 	'phone' => rand(1111111111,9999999999),
-	'data_begin_s' => datetime(),
-	'data_end_s' => datetime(),
+	'data_begin_s' => date('Y-m-d H:i:s',$datetime_begin),
+	'data_end_s' => $datetime_end,
 	'quantity_min' => $quantity_min,
 	'price_min' => $price_min,
 	'sum' => $quantity_min*$price_min,
@@ -65,8 +85,8 @@ $data_receipt = [
 // массив данных для таблицы users	
 $data_users = [
     'ip'     => "".mt_rand(0,255).".".mt_rand(0,255).".".mt_rand(0,255).".".mt_rand(0,255),
-    'datetime_begin' => datetime(),
-    'datetime_end' => datetime(), 
+    'datetime_begin' => date('Y-m-d H:i:s',$datetime_begin),
+    'datetime_end' => $datetime_end, 
 ];
 
 // Создаём модели

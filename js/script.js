@@ -13,7 +13,6 @@ $("input[name=select_table]").change(function (){
     if (value_radio==='cd') {
         var data_filter = $("#input_query").val();
         console.log(data_filter);
-        if (!empty(data_filter)) {
           $.ajax({
             url: "includes/diagramm.php",
             method: 'POST',
@@ -24,11 +23,11 @@ $("input[name=select_table]").change(function (){
                 console.log("Complete "+value_radio+" and "+data_filter+ " to diagramm.php");
             }
         });
-      }
     }
-});  
-if ($("input[name=select_table]").val()) {
-$("input[name=select_table]").change();
+});
+$( "#select_one" ).prop( "checked", true );
+if ($("input[name=select_table]:checked").length > 0) {
+$("input[name=select_table]:checked").change();
 }
 });
 

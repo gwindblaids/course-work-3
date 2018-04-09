@@ -4,12 +4,12 @@
  * @Author: gwindblaids
  * @Date:   2018-03-29 16:25:07
  * @Last Modified by:   gwindblaids
- * @Last Modified time: 2018-03-29 19:46:34
+ * @Last Modified time: 2018-04-09 21:01:52
  */
 	class Database {
 		public $db = '';
 		public function __construct() {
-			$this->db = new PDO("mysql:host=localhost;dbname=course_work;", "gwindblaids", "GwindblaidsEdik9344");
+			$this->db = new PDO("mysql:host=localhost;dbname=course_work;charset=utf8;", "gwindblaids", "GwindblaidsEdik9344");
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);			
 
 		}
