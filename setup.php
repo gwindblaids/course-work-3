@@ -49,7 +49,7 @@ function datefor_e($value) {
 $faker = Faker::create('ru_RU');
 
 // Подключаемся к БД как в PDO
-RedBean::setup('mysql:host=localhost;dbname=course_work;charset=utf-8;', 'gwindblaids', 'GwindblaidsEdik9344');
+RedBean::setup('mysql:host=localhost;dbname=course_work;', 'gwindblaids', 'GwindblaidsEdik9344');
 
 for ($i=0;$i<1000;$i++) {
 

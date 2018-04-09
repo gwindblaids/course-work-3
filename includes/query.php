@@ -7,11 +7,13 @@
  * @Last Modified time: 2018-04-09 22:17:12
  */
 if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_table'])) {
+	echo "<br>";
 			//fr
 			if ($_POST['select_table']=='fr') {
 
-				echo "<br>First query";
 				$query = $database->setRequest("SELECT COUNT(*) AS `COUNT`, cast(`datetime_begin` AS time) AS `begin`, cast(`datetime_end` AS time) AS `end` FROM `users` WHERE cast(`datetime_end` AS date)='" .$_POST['query'] . "' OR cast(`datetime_begin` AS date)='".$_POST['query'] ."' GROUP BY `datetime_begin`, `datetime_end` HAVING COUNT(*) > 1 ORDER BY `COUNT` LIMIT 1");
+				if ($query->rowCount()>0) {
+					echo "<span class=\"description_query\">Максимальное кол-во клиентов на дату " . $_POST['query'] . "</span>";
 
 ?>
 <table border="1px" class = "table_dark" align="center">
@@ -26,11 +28,13 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 					   	}
 					echo "</tr>";
 					}
+				} else echo "<span class=\"description_query\">К сожалению по вашему запросу  максимальное кол-во клиентов 1.</span>";
 			}
 
 			if ($_POST['select_table']=='sr') {
-				echo "<br><center>Данные операторов с номером смены " . $_POST['query'] . "</center><br>";
+				echo "<span class=\"description_query\">Данные операторов с номером смены " . $_POST['query'] . "</span>";
 				$query = $database->setRequest("SELECT full_name_operator, adress, phone FROM receipt WHERE number_shifts=" . $_POST['query']);
+				
 ?>
 <table border="1px" class = "table_dark" align="center">
 <?php
@@ -45,6 +49,7 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 					   	}
 					echo "</tr>";
 					}
+
 			}
 
 

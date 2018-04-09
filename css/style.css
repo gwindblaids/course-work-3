@@ -269,3 +269,14 @@ _overflow-x:hidden; }
   display: block;
   padding-bottom: 50px;
 }
+.description_query {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  padding:15px;
+}
+.column { height:400px; width:18px; }
+ .column div { border:1px solid black; background:#090; width:16px; margin:-1px 0; }
+ .chart { background:url(image/chart.png) no-repeat; padding:4px; }
+ .height40 { height:40px; }
