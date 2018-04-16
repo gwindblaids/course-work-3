@@ -4,7 +4,7 @@
  * @Author: gwindblaids
  * @Date:   2018-03-29 16:25:07
  * @Last Modified by:   gwindblaids
- * @Last Modified time: 2018-04-09 21:15:23
+ * @Last Modified time: 2018-04-16 18:15:54
  */
 
 // скрипт автоматически заполняет базу данных случайными данными
@@ -49,7 +49,7 @@ function datefor_e($value) {
 $faker = Faker::create('ru_RU');
 
 // Подключаемся к БД как в PDO
-RedBean::setup('mysql:host=localhost;dbname=course_work;', 'gwindblaids', 'GwindblaidsEdik9344');
+RedBean::setup('mysql:host=localhost;dbname=course_work;', 'gwindblaids', 'pass');
 
 for ($i=0;$i<1000;$i++) {
 
