@@ -39,9 +39,10 @@ header("Content-Type = text/html;charset=utf-8;");?>
         </form>
 
         <div class="description">
-            <p><strong>FR(first request)</strong> - Время заданных суток, на которое пришлось максимальное количество клиентов.</p>
+            <p><strong>FR (first request)</strong> - Время заданных суток, на которое пришлось максимальное количество
+                клиентов.</p>
             <p><strong>SR (second request)</strong> - Список сотрудников заданной смены: ФИО, должность, домашний адрес,домашний и мобильный телефоны.</p>
-            <p><strong>CD (create diagramm)</strong> - Построить диаграмму: количество клиентов за заданный месяц 
+            <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц
 с разбивкой по дням.</p>
         </div>
 
@@ -53,5 +54,4 @@ header("Content-Type = text/html;charset=utf-8;");?>
             require_once 'templates/footer.php';
             ?>
     </body>
-
     </html>

@@ -114,4 +114,3 @@ RedBean::store($users);
 RedBean::store($receipt);
 RedBean::store($price);
 }
-?>

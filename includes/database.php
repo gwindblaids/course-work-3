@@ -11,7 +11,6 @@
 		public function __construct() {
 			$this->db = new PDO("mysql:host=localhost;dbname=course_work;charset=utf8;", "gwindblaids", "pass");
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);			
-
 		}
 		public function setRequest ($request) {
 			try {
@@ -22,7 +21,6 @@
 				$this->db->closeCursor();
 			}
 		}
-
 		function __destruct() {
 			$this->db=null;
 		}

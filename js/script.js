@@ -14,13 +14,13 @@ $("input[name=select_table]").change(function (){
         var data_filter = $("#input_query").val();
         console.log(data_filter);
           $.ajax({
-            url: "includes/diagramm.php",
+              url: "includes/diagram.php",
             method: 'POST',
             data: {change: value_radio, query: data_filter},
             cache: false,
             success: function(html) {
                 $("#diagramm").html(html);
-                console.log("Complete "+value_radio+" and "+data_filter+ " to diagramm.php");
+                console.log("Complete " + value_radio + " and " + data_filter + " to diagram.php");
             }
         });
     }
