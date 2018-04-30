@@ -5,13 +5,13 @@
 * @Last Modified time: 2018-04-03 18:23:13
 */
 /* <Меню> */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
 body {
 	background-image: url("../images/pattern.jpg");
   overflow-x: hidden;
   padding: 0;
   margin: 0;
 }
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
 .top-menu {
   margin: 0 60px;
   position: relative;
@@ -276,7 +276,3 @@ _overflow-x:hidden; }
   font-weight: 400;
   padding:15px;
 }
-.column { height:400px; width:18px; }
- .column div { border:1px solid black; background:#090; width:16px; margin:-1px 0; }
- .chart { background:url(image/chart.png) no-repeat; padding:4px; }
- .height40 { height:40px; }

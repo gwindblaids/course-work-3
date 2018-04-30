@@ -26,4 +26,3 @@
 		}
 	}
 	$database = new Database;
- ?>

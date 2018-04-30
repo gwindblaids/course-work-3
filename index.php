@@ -37,15 +37,13 @@ header("Content-Type = text/html;charset=utf-8;");?>
                 <input type="submit" name="submit_button" value="Отправить" class="submit_button">
             </div>
         </form>
-
         <div class="description">
             <p><strong>FR (first request)</strong> - Время заданных суток, на которое пришлось максимальное количество
                 клиентов.</p>
             <p><strong>SR (second request)</strong> - Список сотрудников заданной смены: ФИО, должность, домашний адрес,домашний и мобильный телефоны.</p>
-            <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц
-с разбивкой по дням.</p>
+            <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц с
+                разбивкой по дням.</p>
         </div>
-
         <div id="diagramm"></div>
         <div id="content_query">
             <?php require 'includes/query.php';?>

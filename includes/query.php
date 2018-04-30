@@ -22,6 +22,7 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 					   	}
 					echo "</tr>";
 					}
+                    // todo сделать коммит
 					echo '</table>';
 				} else echo "<span class=\"description_query\">К сожалению по вашему запросу  максимальное кол-во клиентов 1.</span>";
 			}
@@ -44,9 +45,6 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 			}
 			if ($_POST['select_table']=='cd') {
 				echo "<br>Create diagramm query";
-				//$query = $database->setRequest("");
-				//if ($query->rowCount()>0) {
-				//}
+                header("Location: includes/diagram.php");
 			}
 }
-?>
