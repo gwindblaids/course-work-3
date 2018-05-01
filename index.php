@@ -46,7 +46,7 @@ header("Content-Type = text/html;charset=utf-8;");?>
             <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц с
                 разбивкой по дням.</p>
         </div>
-<div id="chartContainer">Загрузка FusionCharts</div>
+<div id="chartContainer" align="center">Загрузка FusionCharts</div>
         <div id="content_query">
             <?php require 'includes/query.php';?>
         </div>
