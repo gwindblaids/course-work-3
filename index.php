@@ -14,6 +14,8 @@ header("Content-Type = text/html;charset=utf-8;");?>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="fusioncharts/js/fusioncharts.js"></script>
+        <script src="fusioncharts/js/themes/fusioncharts.theme.fint.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <link rel="shortcut icon" href="images/course_work.jpg" type="image/jpg">
     </head>
@@ -44,7 +46,7 @@ header("Content-Type = text/html;charset=utf-8;");?>
             <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц с
                 разбивкой по дням.</p>
         </div>
-        <div id="diagramm"></div>
+<div id="chartContainer">Загрузка FusionCharts</div>
         <div id="content_query">
             <?php require 'includes/query.php';?>
         </div>

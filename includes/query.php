@@ -44,7 +44,6 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 				} else echo "<span class=\"description_query\">К сожалению по вашему запросу ничего не найдено.</span>";
 			}
 			if ($_POST['select_table']=='cd') {
-				echo "<br>Create diagramm query";
-                header("Location: includes/diagram.php");
+                header("Location: includes/diagram.php?query=" . strval($_POST['query']));
 			}
 }
