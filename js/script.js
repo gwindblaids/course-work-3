@@ -14,7 +14,6 @@ $("input[name=select_table]").change(function (){
 $( "#select_one" ).prop( "checked", true );
 if ($("input[name=select_table]:checked").length > 0) {
 $("input[name=select_table]:checked").change();
-}
-});
+}});
 
 

@@ -29,7 +29,7 @@ if (isset($_POST['query']) && !empty($_POST['query']) && isset($_POST['select_ta
 			if ($_POST['select_table']=='sr') {
 				$query = $database->setRequest("SELECT full_name_operator, adress, phone FROM receipt WHERE number_shifts=" . $_POST['query']);
 				if ($query->rowCount()>0) {
-				echo "<span class=\"description_query\">Данные операторов с номером смены " . $_POST['query'] . "</span>";
+				echo "<span class=\"description_query\">Данные операторов с номером смены " . strval($_POST['query']) . "</span>";
 				echo '<table border="1px" class = "table_dark" align="center">';
 				echo "<tr><th>ФИО</th> <th>Адрес</th><th>Телефон</th></tr>";
 				while ($row = $query->fetch(PDO::FETCH_LAZY)) {
