@@ -10,27 +10,17 @@ $( "#select_one" ).prop( "checked", true );
 if ($("input[name=select_table]:checked").length > 0) {
     $("input[name=select_table]:checked").change();
 // create diagram if input !empty and select method  'cd'
-    $.ajax({
-        type: "GET",
-        url: "includes/diagram.php",
-        dataType: "text",
-        error: function () {
-            console.log("Не вышло");
-        },
-        success: function (temp) {
             FusionCharts.ready(function () {
                 var myChart = new FusionCharts({
                     "type": "column2d",
                     "renderAt": "chartContainer",
                     "width": "500",
                     "height": "300",
-                    "dataFormat": "xml",
-                    "dataSource": temp
+                    "dataFormat": "xmlurl",
+                    "dataSource": "includes/diagram.php"
                 });
                 myChart.render();
             });
-        }
-    });
 }});
 
 
