@@ -1,13 +1,13 @@
 <?php
 /**
- * @Author: gwindblaids
- * @Date:   2018-03-29 16:25:07
- * @Last Modified by:   gwindblaids
- * @Last Modified time: 2018-04-09 21:13:48
- */
+* @Author: gwindblaids
+* @Date:   2018-03-29 16:25:07
+* @Last Modified by:   gwindblaids
+* @Last Modified time: 2018-04-09 21:13:48
+*/
 header("Content-Type = text/html;charset=utf-8;");?>
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
     <head>
         <title>Курсовая работа</title>
         <meta charset="utf-8">
@@ -20,10 +20,10 @@ header("Content-Type = text/html;charset=utf-8;");?>
         <link rel="shortcut icon" href="images/course_work.jpg" type="image/jpg">
     </head>
     <body>
-<?php 
-	require 'templates/header.php';
-	require 'includes/database.php';
-?>
+        <?php
+            require 'templates/header.php';
+            require 'includes/database.php';
+        ?>
         <form name="get_info" id="get_info" method="POST" action="index.php">
             <input type="text" name="query" class="query" placeholder="Начните вводить данные в зависимости от выбранного запроса" id="input_query" autocomplete="off" required>
             <br>
@@ -41,19 +41,19 @@ header("Content-Type = text/html;charset=utf-8;");?>
         </form>
         <div class="description">
             <p><strong>FR (first request)</strong> - Время заданных суток, на которое пришлось максимальное количество
-                клиентов.</p>
+            клиентов.</p>
             <p><strong>SR (second request)</strong> - Список сотрудников заданной смены: ФИО, должность, домашний адрес,домашний и мобильный телефоны.</p>
             <p><strong>CD (create diagram)</strong> - Построить диаграмму: количество клиентов за заданный месяц с
-                разбивкой по дням.</p>
+            разбивкой по дням.</p>
         </div>
-    <br>
-    <div id="chartContainer" align="center"></div>
-    <br>
+        <br>
+        <div id="chartContainer" align="center"></div>
+        <br>
         <div id="content_query">
             <?php require 'includes/query.php';?>
         </div>
-            <?php 
-            require_once 'templates/footer.php';
-            ?>
+        <?php
+        require_once 'templates/footer.php';
+        ?>
     </body>
-    </html>
+</html>

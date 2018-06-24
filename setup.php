@@ -10,11 +10,13 @@
 // скрипт автоматически заполняет базу данных случайными данными
 
 // Подключим автозагрузку классов
+
 require 'vendor/autoload.php';
 
 // Объявим неймспейсы
 use Faker\Factory as Faker;
 use RedBeanPHP\R  as RedBean;
+
 function datetime () {
 	$min = strtotime("20151227");
     $max = strtotime("20181130");
@@ -25,6 +27,7 @@ function datetime () {
     // Convert back to desired date format
     return date('Y-m-d H:i:s', $val);
 }
+
 // Запишем экземпляр класса Faker\Factory в переменную
 
 function datefor_b() {
@@ -46,12 +49,13 @@ function datefor_e($value) {
     // Convert back to desired date format
     return date('Y-m-d H:i:s', $val);
 }
+
 $faker = Faker::create('ru_RU');
 
 // Подключаемся к БД как в PDO
-RedBean::setup('mysql:host=localhost;dbname=course_work;', 'gwindblaids', 'pass');
+RedBean::setup('mysql:host=localhost;dbname=course_work;', 'root', '');
 
-for ($i=0;$i<1000;$i++) {
+for ($i=0;$i<100;$i++) {
 
 $price_min = rand(4,10);
 $datetime_begin = datefor_b();
@@ -114,3 +118,7 @@ RedBean::store($users);
 RedBean::store($receipt);
 RedBean::store($price);
 }
+echo "База успешно наполнена. Переход на главную страницу...";
+sleep(20);
+// редирект на главную страницу
+header('Location: index.php');

@@ -6,10 +6,10 @@
  * @Last Modified by:   gwindblaids
  * @Last Modified time: 2018-04-16 18:15:54
  */
-	class Database {
+	class MyDatabase {
 		public $db = '';
 		public function __construct() {
-			$this->db = new PDO("mysql:host=localhost;dbname=course_work;charset=utf8;", "gwindblaids", "pass");
+			$this->db = new PDO("mysql:host=localhost;dbname=course_work;charset=utf8;", "root", "");
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);			
 		}
 		public function setRequest ($request) {
@@ -25,4 +25,4 @@
 			$this->db=null;
 		}
 	}
-	$database = new Database;
+	$database = new MyDatabase;
